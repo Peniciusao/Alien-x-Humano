@@ -7070,11 +7070,7 @@ MonoBehaviour:
   evento75: 1
   evento50: 1
   evento25: 1
-  itemCura: {fileID: 0}
-  quantidadeCuras: 2
-  inimigos: []
-  quantidadeInimigos: 3
-  pontosSpawn: []
+  escudoRefletor: {fileID: 0}
 --- !u!212 &1390640910
 SpriteRenderer:
   serializedVersion: 2
@@ -7143,7 +7139,7 @@ Transform:
   m_GameObject: {fileID: 1390640908}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.6, y: 3, z: 0}
+  m_LocalPosition: {x: 17, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7294,7 +7290,7 @@ MonoBehaviour:
   hitbox: {fileID: 293852997}
   dano: 10
   tempoAviso: 1
-  duracaoAtaque: 0.5
+  duracaoAtaque: 0.1
   corAviso: {r: 1, g: 0, b: 0, a: 0.25}
   corAtaque: {r: 1, g: 0, b: 0, a: 1}
   larguraLaser: 20
