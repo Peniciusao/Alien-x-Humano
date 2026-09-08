@@ -34,32 +34,12 @@ public class BossLaser : MonoBehaviour
             if (player != null)
                 jogador = player.transform;
         }
-
-        AjustarTamanhoDoLaser();
         DesativarLaser();
     }
 
-    void OnValidate()
-    {
-        AjustarTamanhoDoLaser();
-    }
 
-    public void AjustarTamanhoDoLaser()
-    {
-        if (laserSprite != null)
-        {
-            if (laserSprite.drawMode != SpriteDrawMode.Simple)
-                laserSprite.size = new Vector2(larguraLaser, comprimentoLaser);
-            else
-                laserSprite.transform.localScale = new Vector3(larguraLaser, comprimentoLaser, 1f);
-        }
 
-        if (hitbox != null)
-        {
-            hitbox.size = new Vector2(larguraLaser, comprimentoLaser);
-        }
-    }
-
+  
     public void Atacar()
     {
         if (atacando)
@@ -85,8 +65,6 @@ public class BossLaser : MonoBehaviour
             atacando = false;
             yield break;
         }
-
-        AjustarTamanhoDoLaser();
 
         // --- FASE 1: AVISO / MIRA (Sem Dano) ---
         if (laserSprite != null)
@@ -181,5 +159,26 @@ public class BossLaser : MonoBehaviour
                 break;
             }
         }
+    }
+    void OnDrawGizmos()
+    {
+        if (hitbox == null) return;
+
+        // Salva a matriz de transformação original da Unity
+        Matrix4x4 matrizOriginal = Gizmos.matrix;
+
+        // Aplica a transformação exata de posição, rotação e escala do objeto da Hitbox
+        Gizmos.matrix = hitbox.transform.localToWorldMatrix;
+
+        // 1. Desenha o contorno em linha vermelha
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(hitbox.offset, hitbox.size);
+
+        // 2. Desenha um preenchimento vermelho semitransparente
+        Gizmos.color = new Color(1f, 0f, 0f, 0.25f);
+        Gizmos.DrawCube(hitbox.offset, hitbox.size);
+
+        // Restaura a matriz original dos Gizmos
+        Gizmos.matrix = matrizOriginal;
     }
 }
