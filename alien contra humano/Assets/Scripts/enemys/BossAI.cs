@@ -17,34 +17,29 @@ public class BossAI : MonoBehaviour
     public bool ataqueArea = true;
     public bool ataqueLaser = true;
 
-    private float proximaDecisao;
+    [Header("Referências de Ataque")]
+    public BossLaser bossLaser; // 👈 Arraste o objeto filho do laser aqui no Inspector
 
+    private float proximaDecisao;
     private int ultimoAtaque = -1;
     private int ataquesSeguidos = 0;
-
     private bool decidindo = false;
 
     void Start()
     {
         if (jogador == null)
         {
-            GameObject player =
-                GameObject.FindGameObjectWithTag("Player");
-
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
             if (player != null)
                 jogador = player.transform;
         }
 
-        proximaDecisao =
-            Time.time + Random.Range(1f, 2f);
+        proximaDecisao = Time.time + Random.Range(1f, 2f);
     }
 
     void Update()
     {
-        if (jogador == null)
-            return;
-
-        if (decidindo)
+        if (jogador == null || decidindo)
             return;
 
         if (Time.time >= proximaDecisao)
@@ -57,73 +52,40 @@ public class BossAI : MonoBehaviour
     {
         decidindo = true;
 
-        float distancia =
-            Vector2.Distance(
-                transform.position,
-                jogador.position
-            );
-
+        float distancia = Vector2.Distance(transform.position, jogador.position);
         int ataqueEscolhido = EscolherAtaque(distancia);
 
         ExecutarAtaque(ataqueEscolhido);
 
-        // Espera antes de decidir novamente
-        float tempo =
-            Random.Range(
-                tempoMinimo,
-                tempoMaximo
-            );
-
+        float tempo = Random.Range(tempoMinimo, tempoMaximo);
         yield return new WaitForSeconds(tempo);
 
         proximaDecisao = Time.time;
-
         decidindo = false;
     }
 
     int EscolherAtaque(float distancia)
     {
-        // Se só existe um ataque disponível
-        if (ataqueArea && !ataqueLaser)
-            return 0;
+        if (ataqueArea && !ataqueLaser) return 0;
+        if (!ataqueArea && ataqueLaser) return 1;
 
-        if (!ataqueArea && ataqueLaser)
-            return 1;
-
-        // Se existem os dois
         if (ataqueArea && ataqueLaser)
         {
-            // Se usou o mesmo ataque duas vezes seguidas,
-            // força o outro ataque.
             if (ataquesSeguidos >= 2)
             {
-                if (ultimoAtaque == 0)
-                    return 1;
-
+                if (ultimoAtaque == 0) return 1;
                 return 0;
             }
 
-            // Perto = maior chance de ataque de área
             if (distancia <= distanciaPerto)
             {
                 int chance = Random.Range(0, 100);
-
-                if (chance < 70)
-                    return 0;
-                else
-                    return 1;
+                return (chance < 70) ? 0 : 1;
             }
-
-            // Longe = maior chance de laser,
-            // mas ainda pode escolher área.
             else
             {
                 int chance = Random.Range(0, 100);
-
-                if (chance < 65)
-                    return 1;
-                else
-                    return 0;
+                return (chance < 65) ? 1 : 0;
             }
         }
 
@@ -132,38 +94,32 @@ public class BossAI : MonoBehaviour
 
     void ExecutarAtaque(int ataque)
     {
-        if (ataque == -1)
-            return;
+        if (ataque == -1) return;
 
         // Ataque de área
         if (ataque == 0)
         {
             Debug.Log("BOSS ESCOLHEU: ATAQUE DE ÁREA");
-
-            BossAreaAttack area =
-                GetComponent<BossAreaAttack>();
-
+            BossAreaAttack area = GetComponent<BossAreaAttack>();
             if (area != null)
             {
                 area.Atacar();
             }
         }
-
         // Laser
         else if (ataque == 1)
         {
             Debug.Log("BOSS ESCOLHEU: LASER");
-
-            BossLaser laser =
-                GetComponent<BossLaser>();
-
-            if (laser != null)
+            if (bossLaser != null)
             {
-                laser.Atacar();
+                bossLaser.Atacar();
+            }
+            else
+            {
+                Debug.LogWarning("BossLaser não foi atribuído no Inspector do BossAI!");
             }
         }
 
-        // Guarda o ataque utilizado
         if (ataque == ultimoAtaque)
         {
             ataquesSeguidos++;

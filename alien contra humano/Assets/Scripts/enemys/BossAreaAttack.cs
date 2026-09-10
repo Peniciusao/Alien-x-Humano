@@ -3,139 +3,102 @@ using System.Collections;
 
 public class BossAreaAttack : MonoBehaviour
 {
-    [Header("Ataque de Área")]
-    public float alcance = 2.5f;
-    public int dano = 10;
-    public float tempoAviso = 0.8f; // Tempo que a área pisca/avisa antes do dano
+    [Header("Componentes de Área")]
+    public SpriteRenderer areaSprite;
+    public BoxCollider2D hitboxArea;
 
-    [Header("Cores do Aviso")]
-    public Color corAviso = new Color(1f, 0.5f, 0f, 0.4f); // Laranja transparente
-    public Color corAtaque = Color.red;                    // Vermelho forte
+    [Header("Configurações do Ataque")]
+    public int dano = 20;
+    public float tempoAviso = 1.2f;
+    public float duracaoAtaque = 0.4f;
 
-    [Header("Visual da Área")]
-    public bool mostrarArea = true;
-    public float espessuraCirculo = 0.05f;
-    public int quantidadePontos = 64;
+    [Header("Cores")]
+    public Color corAviso = new Color(1f, 0.64f, 0f, 0.3f);
+    public Color corAtaque = new Color(1f, 0.27f, 0f, 0.8f);
 
-    private LineRenderer circulo;
     private bool atacando = false;
+    private bool playerAtingido = false;
 
     void Start()
     {
-        CriarCirculo();
+        DesativarArea();
     }
 
     public void Atacar()
     {
-        if (!atacando)
-            StartCoroutine(ExecutarAtaqueDeArea());
+        gameObject.SetActive(true);
+
+        if (atacando)
+            return;
+
+        StartCoroutine(DispararArea());
     }
 
-    IEnumerator ExecutarAtaqueDeArea()
+    IEnumerator DispararArea()
     {
         atacando = true;
+        playerAtingido = false;
 
-        // 1. FASE DE AVISO (Mostra a área piscando/mudando de cor)
-        if (circulo != null)
+        if (areaSprite != null)
         {
-            circulo.enabled = true;
-            circulo.startColor = corAviso;
-            circulo.endColor = corAviso;
+            areaSprite.color = corAviso;
+            areaSprite.gameObject.SetActive(true);
         }
+
+        if (hitboxArea != null)
+            hitboxArea.enabled = false;
 
         yield return new WaitForSeconds(tempoAviso);
 
-        // 2. FASE DE IMPACTO (Muda para cor forte e calcula dano)
-        if (circulo != null)
+        if (areaSprite != null)
         {
-            circulo.startColor = corAtaque;
-            circulo.endColor = corAtaque;
+            areaSprite.color = corAtaque;
         }
 
-        VerificarEAplicarDano();
+        if (hitboxArea != null)
+            hitboxArea.enabled = true;
 
-        // Breve pausa para mostrar o impacto visual
-        yield return new WaitForSeconds(0.2f);
+        float tempoFimAtaque = Time.time + duracaoAtaque;
 
-        // 3. FIM DO ATAQUE
-        if (circulo != null && !mostrarArea)
-            circulo.enabled = false;
+        while (Time.time < tempoFimAtaque)
+        {
+            VerificarHitboxArea();
+            yield return null;
+        }
 
+        DesativarArea();
         atacando = false;
     }
 
-    void VerificarEAplicarDano()
+    void DesativarArea()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (areaSprite != null)
+            areaSprite.gameObject.SetActive(false);
 
-        if (player == null) return;
+        if (hitboxArea != null)
+            hitboxArea.enabled = false;
 
-        float distancia = Vector2.Distance(transform.position, player.transform.position);
+        gameObject.SetActive(false);
+    }
 
-        // Só acerta se o Player estiver dentro da área
-        if (distancia <= alcance)
+    void VerificarHitboxArea()
+    {
+        if (hitboxArea == null || playerAtingido) return;
+
+        Vector2 centro = hitboxArea.transform.TransformPoint(hitboxArea.offset);
+        Vector2 tamanho = Vector2.Scale(hitboxArea.size, hitboxArea.transform.lossyScale);
+
+        Collider2D[] objetos = Physics2D.OverlapBoxAll(centro, tamanho, hitboxArea.transform.eulerAngles.z);
+
+        foreach (Collider2D objeto in objetos)
         {
-            PlayerHealth vida = player.GetComponent<PlayerHealth>();
-
+            PlayerHealth vida = objeto.GetComponentInParent<PlayerHealth>();
             if (vida != null)
             {
                 vida.TomarDano(dano);
-
-                // 🎯 AVISO NO CONSOLE DA UNITY (Com cor destacada)
-                Debug.Log($"<color=orange>[ALERTA]</color> O Boss acertou {player.name} com o Ataque de Área causando {dano} de dano!");
+                playerAtingido = true;
+                break;
             }
-        }
-        else
-        {
-            // Aviso de esquiva no console
-            Debug.Log($"<color=yellow>[ESQUIVA]</color> {player.name} ficou fora do alcance da área ({distancia:F1}m / {alcance}m) e não tomou dano!");
-        }
-    }
-
-    void CriarCirculo()
-    {
-        GameObject objetoCirculo = new GameObject("AreaVisualBoss");
-        objetoCirculo.transform.SetParent(transform);
-        objetoCirculo.transform.localPosition = Vector3.zero;
-
-        circulo = objetoCirculo.AddComponent<LineRenderer>();
-        circulo.useWorldSpace = false;
-        circulo.loop = true;
-        circulo.positionCount = quantidadePontos;
-        circulo.startWidth = espessuraCirculo;
-        circulo.endWidth = espessuraCirculo;
-
-        Shader shader = Shader.Find("Sprites/Default");
-        if (shader != null)
-            circulo.material = new Material(shader);
-
-        AtualizarCirculo();
-        circulo.enabled = mostrarArea;
-    }
-
-    void AtualizarCirculo()
-    {
-        if (circulo == null) return;
-
-        for (int i = 0; i < quantidadePontos; i++)
-        {
-            float angulo = 2f * Mathf.PI * i / quantidadePontos;
-            float x = Mathf.Cos(angulo) * alcance;
-            float y = Mathf.Sin(angulo) * alcance;
-
-            circulo.SetPosition(i, new Vector3(x, y, 0f));
-        }
-    }
-
-    void OnValidate()
-    {
-        if (quantidadePontos < 8) quantidadePontos = 8;
-        if (espessuraCirculo < 0.001f) espessuraCirculo = 0.001f;
-
-        if (circulo != null)
-        {
-            circulo.positionCount = quantidadePontos;
-            AtualizarCirculo();
         }
     }
 }
