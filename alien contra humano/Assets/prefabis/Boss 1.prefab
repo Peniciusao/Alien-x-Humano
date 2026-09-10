@@ -160,8 +160,6 @@ MonoBehaviour:
   duracaoAtaque: 0.1
   corAviso: {r: 1, g: 0, b: 0, a: 0.25}
   corAtaque: {r: 1, g: 0, b: 0, a: 1}
-  larguraLaser: 20
-  comprimentoLaser: 20
 --- !u!114 &2197379555734950080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,14 +284,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbb4e4c549b9b849ad6ede84e672825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossAreaAttack
-  alcance: 6
+  areaSprite: {fileID: 1108977928081414563}
+  hitboxArea: {fileID: 0}
   dano: 3
   tempoAviso: 0.8
+  duracaoAtaque: 0.4
   corAviso: {r: 1, g: 0.5, b: 0, a: 0.4}
   corAtaque: {r: 1, g: 0, b: 0, a: 1}
-  mostrarArea: 0
-  espessuraCirculo: 0.1
-  quantidadePontos: 64
 --- !u!114 &1522097106629150656
 MonoBehaviour:
   m_ObjectHideFlags: 0

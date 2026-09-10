@@ -1885,7 +1885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
   inimigos:
-  - {fileID: 3052946134066876826, guid: 48633b4887c43f947b2e50c68b914d68, type: 3}
+  - {fileID: 5301172271391643709, guid: 04c1eaca06664a942a8d102443e10744, type: 3}
   jogador: {fileID: 655476196}
   pontosSpawn:
   - {fileID: 1077340723}
@@ -4134,7 +4134,7 @@ Transform:
   m_GameObject: {fileID: 655476191}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 181.1, y: 0, z: 0}
+  m_LocalPosition: {x: -19.6, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6731,7 +6731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealthBar
   barraDeVida: {fileID: 1094726750}
-  boss: {fileID: 2167447692825011687, guid: 48633b4887c43f947b2e50c68b914d68, type: 3}
+  boss: {fileID: 5155662356915652441, guid: 04c1eaca06664a942a8d102443e10744, type: 3}
 --- !u!1 &1103458888
 GameObject:
   m_ObjectHideFlags: 0
