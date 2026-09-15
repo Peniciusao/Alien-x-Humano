@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alien x humano 3do9 ultimo.unity
     guid: 437b48afe50b6b04ca64e63d092ffd87
+  - enabled: 1
+    path: Assets/Scenes/MOrte.unity
+    guid: 6d0a7555ad853974dba06e0f3e716d7c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
