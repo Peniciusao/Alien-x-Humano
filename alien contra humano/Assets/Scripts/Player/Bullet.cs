@@ -7,6 +7,11 @@ public class Bullet : MonoBehaviour
 
     private Vector2 direcao;
 
+    private void Start()
+    {
+        Destroy(this.gameObject, 5);
+    }
+
     public void DefinirDirecao(Vector2 novaDirecao)
     {
         direcao = novaDirecao.normalized;

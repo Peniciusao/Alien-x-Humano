@@ -4,6 +4,11 @@ public class BulletEnemy : MonoBehaviour
 {
     public int dano = 1;
 
+    private void Start()
+    {
+        Destroy(this.gameObject, 5);
+    }
+
     void OnTriggerEnter2D(Collider2D outro)
     {
         // Ignora inimigos
