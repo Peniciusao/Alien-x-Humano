@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -5686960265601636906, guid: bfec6452978575341b9b132f12331e50, type: 3}
   m_Color: {r: 1, g: 0.6615062, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -179,6 +179,12 @@ MonoBehaviour:
   pontoTiro: {fileID: 1710426976500345156}
   cooldownTiro: 2
   velocidadeBala: 12
+  tempoMira: 0.6
+  spriteRenderer: {fileID: 0}
+  spritesCaminhada:
+  - {fileID: 394854916686087665, guid: 6c112becb0ff9d3488d70d190f7433b3, type: 3}
+  - {fileID: -4264796639512613693, guid: cbef51c278955af4daa9605ce0adf2f7, type: 3}
+  fpsCaminhada: 6
 --- !u!61 &9037331550231930821
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -217,7 +223,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.12, y: 3.11}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
