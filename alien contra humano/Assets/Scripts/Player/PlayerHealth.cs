@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     void Morrer()
     {
         Debug.Log("Jogador morreu");
+        SceneManager.LoadScene("MOrte");
         Destroy(gameObject);
     }
 }
