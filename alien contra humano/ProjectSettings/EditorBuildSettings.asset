@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MOrte.unity
     guid: 6d0a7555ad853974dba06e0f3e716d7c
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: d72504e954199da4d8aefef9de1efa05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

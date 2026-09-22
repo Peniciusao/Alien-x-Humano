@@ -36,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
     public void RecuperarVidaTotal()
     {
         vida = vidatotaldoplayer;
+        healthBar.SetHealth(vida);
 
         Debug.Log("Jogador recuperou toda a vida!");
     }
