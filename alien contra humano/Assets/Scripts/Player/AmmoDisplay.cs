@@ -34,7 +34,7 @@ public class AmmoDisplay : MonoBehaviour
         texto.fontSizeMax = 32f;
         texto.enableAutoSizing = true;
         texto.alignment = TextAlignmentOptions.BottomLeft;
-        texto.color = Color.white;
+        texto.color = Color.black;
         texto.outlineWidth = 0.2f;
         texto.outlineColor = Color.black;
         texto.raycastTarget = false;

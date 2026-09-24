@@ -11,17 +11,20 @@ public class Shoot : MonoBehaviour
 
     [Header("Munição da pistola")]
     [Min(1)] public int capacidadePistola = 12;
-    [Min(0)] public int reservaInicialPistola = 90;
+    [Tooltip("Reserva ao iniciar. Durante o jogo, alterar este campo substitui a reserva atual. Para salvar o valor, edite fora do modo Play. O Inspector tem prioridade sobre o valor inicial do código.")]
+    [Min(0)] public int reservaInicialPistola = 144;
     [Min(0.01f)] public float tempoRecargaPistola = 1.5f;
     [Header("Munição da shotgun")]
     [Min(1)] public int capacidadeShotgun = 6;
-    [Min(0)] public int reservaInicialShotgun = 36;
+    [Tooltip("Reserva ao iniciar. Durante o jogo, alterar este campo substitui a reserva atual. Para salvar o valor, edite fora do modo Play. O Inspector tem prioridade sobre o valor inicial do código.")]
+    [Min(0)] public int reservaInicialShotgun = 90;
     [Min(0.01f)] public float tempoRecargaShotgun = 2.5f;
     [Header("Interface")]
     public bool mostrarMunicao = true;
 
     private readonly int[] carregadores = new int[2];
     private readonly int[] reservas = new int[2];
+    private readonly int[] reservasConfiguradas = new int[2];
     private readonly float[] proximosTiros = new float[2];
     private int armaRecarregando = -1;
     private float fimRecarga;
@@ -41,6 +44,8 @@ public class Shoot : MonoBehaviour
         carregadores[1] = Capacidade(1);
         reservas[0] = Mathf.Max(0, reservaInicialPistola);
         reservas[1] = Mathf.Max(0, reservaInicialShotgun);
+        reservasConfiguradas[0] = reservas[0];
+        reservasConfiguradas[1] = reservas[1];
     }
 
     void Start()
@@ -56,6 +61,7 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
+        AtualizarReservasConfiguradas();
         if (Time.timeScale <= 0f) return;
         int indice = IndiceArma;
         // Trocar de arma cancela a recarga sem transferir ou criar munição.
@@ -76,6 +82,18 @@ public class Shoot : MonoBehaviour
         }
         if (Mouse.current != null && Mouse.current.rightButton.isPressed && Time.time >= proximosTiros[indice])
             Atirar(indice);
+    }
+
+    // Aplica somente mudanças na configuração, sem restaurar munição consumida a cada quadro.
+    void AtualizarReservasConfiguradas()
+    {
+        for (int indice = 0; indice < reservas.Length; indice++)
+        {
+            int configurada = Mathf.Max(0, indice == 0 ? reservaInicialPistola : reservaInicialShotgun);
+            if (configurada == reservasConfiguradas[indice]) continue;
+            reservas[indice] = configurada;
+            reservasConfiguradas[indice] = configurada;
+        }
     }
 
     public void Recarregar()
