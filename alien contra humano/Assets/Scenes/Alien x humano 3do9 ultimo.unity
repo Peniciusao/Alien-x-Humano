@@ -3808,7 +3808,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 26.934616, y: 0.013687487, z: 0}
-  m_LocalScale: {x: 0.348894, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 949330446}
@@ -4478,6 +4478,9 @@ MonoBehaviour:
   distancia: 1.5
   duracaoAtaque: 0.1
   cooldown: 0.05
+  animator: {fileID: 0}
+  gatilhoAtaque: MeleeAttack
+  atrasoImpacto: 0
 --- !u!114 &655476200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4495,8 +4498,13 @@ MonoBehaviour:
   armas: {fileID: 655476201}
   cooldownPistola: 0.2
   cooldownShotgun: 1
+  capacidadePistola: 12
   reservaInicialPistola: 144
+  tempoRecargaPistola: 1.5
+  capacidadeShotgun: 6
   reservaInicialShotgun: 90
+  tempoRecargaShotgun: 2.5
+  mostrarMunicao: 1
 --- !u!114 &655476201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6119,7 +6127,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 60, y: 0.004562495, z: 0}
-  m_LocalScale: {x: 0.348894, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 949330446}
@@ -7333,7 +7341,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 63.8, y: 0.004562495, z: 0}
-  m_LocalScale: {x: 0.348894, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1064820788}
@@ -7877,7 +7885,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 26.934616, y: 0.013687487, z: 0}
-  m_LocalScale: {x: 0.348894, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1064820788}
@@ -8151,6 +8159,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1252260193}
   - component: {fileID: 1252260192}
+  - component: {fileID: 1252260195}
+  - component: {fileID: 1252260194}
   m_Layer: 0
   m_Name: New Piskel (8)_0
   m_TagString: Untagged
@@ -8226,12 +8236,64 @@ Transform:
   m_GameObject: {fileID: 1252260191}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.19, y: -0.22985125, z: 0}
+  m_LocalPosition: {x: 1.23, y: -0.22985125, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1252260194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252260191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be9c68504b4ff7140965346cc75c1d55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConversaNPC
+  caixaDeTexto: {fileID: 0}
+  textoDoDialogo: {fileID: 0}
+  mensagem: "Eae Gyz, os invasores est\xE3o para a direita, da seus pulos ai com
+    eles."
+--- !u!58 &1252260195
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252260191}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 4
 --- !u!1 &1273376292
 GameObject:
   m_ObjectHideFlags: 0
@@ -9157,7 +9219,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 26.934616, y: 0.013687487, z: 0}
-  m_LocalScale: {x: 0.348894, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2061403962}
@@ -12557,7 +12619,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 63.8, y: 0.004562495, z: 0}
-  m_LocalScale: {x: 0.348894, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2061403962}
