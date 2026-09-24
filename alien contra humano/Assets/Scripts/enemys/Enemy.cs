@@ -3,7 +3,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("Movimento")]
-    public float velocidade = 2f;
+    [Min(0f)]
+    [Tooltip("valor do prefab funciona ao inves desse sla pq")]
+    public float velocidade = 9f;
     public int vida = 3;
     public int dano = 1;
 

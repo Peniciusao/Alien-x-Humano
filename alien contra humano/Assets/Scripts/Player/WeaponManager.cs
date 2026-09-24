@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// Processa a troca antes do disparo e da recarga no mesmo quadro.
+[DefaultExecutionOrder(-100)]
 public class WeaponManager : MonoBehaviour
 {
     public int armaAtual = 1;

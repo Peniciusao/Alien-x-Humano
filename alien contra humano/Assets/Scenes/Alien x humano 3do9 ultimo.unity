@@ -760,8 +760,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 2.5, y: 0}
+  m_SizeDelta: {x: -5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &85050464
 GameObject:
@@ -4495,6 +4495,8 @@ MonoBehaviour:
   armas: {fileID: 655476201}
   cooldownPistola: 0.2
   cooldownShotgun: 1
+  reservaInicialPistola: 144
+  reservaInicialShotgun: 90
 --- !u!114 &655476201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11601,7 +11603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bot\xE3o direito - tiro\nBot\xE3o esquerdo - Corpo a corpo\nWASD - movimento\n1
+  m_text: "Bot\xE3o direito - tiro\nBot\xE3o esquerdo - corpo a corpo\nWASD - movimento\n1
     e 2 - modo de tiro\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int vida = 10;
+    public int vida = 7;
     public int vidatotaldoplayer = 20;
 
     public PlayerHealthBar healthBar;
