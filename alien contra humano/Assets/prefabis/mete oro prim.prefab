@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5328424493103882907}
   - component: {fileID: 7148049464910491035}
   - component: {fileID: 1418270783498500951}
+  - component: {fileID: 8037780692092486928}
   m_Layer: 0
   m_Name: mete oro prim
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 75.97619, y: -5.72684, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,10 +123,25 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.68383604, y: -0.124343015}
   m_Size: {x: 22.956144, y: 13.805185}
   m_Direction: 1
+--- !u!114 &8037780692092486928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880940065106622680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0e38e0a44ea0a4c934ca17d38fca86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Obstaculo
+  velocidade: 6
+  limiteEsquerdo: -15
+  efeitoExplosao: {fileID: 0}

@@ -21,6 +21,7 @@ public class GeradorDeObstaculos : MonoBehaviour
 
     IEnumerator SpawnarRotina()
     {
+        Spawnar();
         while (true)
         {
             // Espera o tempo definido
@@ -41,7 +42,7 @@ public class GeradorDeObstaculos : MonoBehaviour
         float altura = Random.Range(alturaMinima, alturaMaxima);
 
         // Define a posição (X do gerador, Y sorteado, Z zero)
-        Vector3 posicaoSpawn = new Vector3(transform.position.x, altura, 0f);
+        Vector3 posicaoSpawn = new Vector3(transform.position.x, altura, -20f);
 
         // Cria o obstáculo na cena
         Instantiate(obstaculoEscolhido, posicaoSpawn, Quaternion.identity);
