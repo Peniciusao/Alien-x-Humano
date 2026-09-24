@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87143a2179e2a2a4c84f0554af216ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  velocidade: 4
+  velocidade: 9
   vida: 10
   dano: 2
   spriteRenderer: {fileID: 6093267400118919857}

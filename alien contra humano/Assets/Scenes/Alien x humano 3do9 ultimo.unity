@@ -760,8 +760,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 2.5, y: 0}
+  m_SizeDelta: {x: -5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &85050464
 GameObject:
@@ -4458,10 +4458,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28b3ae0e96937342be18f0654b867fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 15
   spriteVisual: {fileID: 2140000002}
   animator: {fileID: 0}
   spriteFacesRight: 1
+  speed: 15
 --- !u!114 &655476199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11394,11 +11394,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1349176719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -841, y: 501}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 24, y: -24}
+  m_SizeDelta: {x: 760, y: 240}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &2004745445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11413,13 +11413,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bot\xE3o direito - tiro\nBot\xE3o esquerdo - Corpo a corpo\nWASD - movimento\n1
+  m_text: "Bot\xE3o direito - tiro\nBot\xE3o esquerdo - corpo a corpo\nWASD - movimento\n1
     e 2 - modo de tiro\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11450,9 +11450,9 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 1
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -11466,7 +11466,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
@@ -11486,7 +11486,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -553.4206, w: -79.06004}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -11510,7 +11510,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 857962ecd17943e99cc55a6caa43eaf8, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControlsTextLayout
   padding: {x: 24, y: 24}
   preferredSize: {x: 760, y: 240}
@@ -12943,22 +12943,6 @@ Transform:
   - {fileID: 1418564100}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1660057539 &9223372036854775807
-SceneRoots:
-  m_ObjectHideFlags: 0
-  m_Roots:
-  - {fileID: 619394802}
-  - {fileID: 655476196}
-  - {fileID: 949330446}
-  - {fileID: 1064820788}
-  - {fileID: 2061403962}
-  - {fileID: 2127616200}
-  - {fileID: 131189661}
-  - {fileID: 526648453}
-  - {fileID: 1436908021}
-  - {fileID: 1349176719}
-  - {fileID: 943383975}
-  - {fileID: 243737476}
 --- !u!1 &2140000001
 GameObject:
   m_ObjectHideFlags: 0
@@ -12991,3 +12975,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 655476196}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 619394802}
+  - {fileID: 655476196}
+  - {fileID: 949330446}
+  - {fileID: 1064820788}
+  - {fileID: 2061403962}
+  - {fileID: 2127616200}
+  - {fileID: 131189661}
+  - {fileID: 526648453}
+  - {fileID: 1436908021}
+  - {fileID: 1349176719}
+  - {fileID: 943383975}
+  - {fileID: 243737476}
