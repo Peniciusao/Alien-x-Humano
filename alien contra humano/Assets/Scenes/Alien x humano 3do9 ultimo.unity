@@ -2053,9 +2053,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 7e91e528b5bdc824f82d65f0a6b6768a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 1c850e97ea56a9848bb7b07d536efe28, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3094,7 +3094,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 13
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10866,7 +10866,7 @@ Transform:
   m_GameObject: {fileID: 1864853301}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 303.8, y: -8.1, z: 0}
+  m_LocalPosition: {x: 302.4, y: -7.4, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
