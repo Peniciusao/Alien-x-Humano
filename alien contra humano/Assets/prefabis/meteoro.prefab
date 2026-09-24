@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8880940065106622680
+--- !u!1 &8514531941287699938
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5328424493103882907}
-  - component: {fileID: 7148049464910491035}
-  - component: {fileID: 1418270783498500951}
-  - component: {fileID: 8037780692092486928}
+  - component: {fileID: 2070548876342145928}
+  - component: {fileID: 2588079980566941741}
+  - component: {fileID: 5744335419104786861}
+  - component: {fileID: 638290595963973540}
   m_Layer: 0
-  m_Name: mete oro prim
+  m_Name: meteoro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5328424493103882907
+--- !u!4 &2070548876342145928
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880940065106622680}
+  m_GameObject: {fileID: 8514531941287699938}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 75.97619, y: -5.72684, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: 67.1981, y: -10.06831, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7148049464910491035
+--- !u!212 &2588079980566941741
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880940065106622680}
+  m_GameObject: {fileID: 8514531941287699938}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2510476293373519475, guid: 237836a023663d746a88e723f18eb5e2, type: 3}
+  m_Sprite: {fileID: 2247426719894998061, guid: fbbc6472cb67de54bac02b8e5011adcb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,13 +93,13 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!70 &1418270783498500951
+--- !u!70 &5744335419104786861
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880940065106622680}
+  m_GameObject: {fileID: 8514531941287699938}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -130,13 +130,13 @@ CapsuleCollider2D:
   m_Offset: {x: 0.68383604, y: -0.124343015}
   m_Size: {x: 22.956144, y: 13.805185}
   m_Direction: 1
---- !u!114 &8037780692092486928
+--- !u!114 &638290595963973540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880940065106622680}
+  m_GameObject: {fileID: 8514531941287699938}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc0e38e0a44ea0a4c934ca17d38fca86, type: 3}
