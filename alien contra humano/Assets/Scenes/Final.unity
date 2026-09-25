@@ -665,7 +665,7 @@ MonoBehaviour:
   nomeDaProximaCena: creditos
   animator: {fileID: 125099833}
   triggerAnimacao: IniciarTransicao
-  tempoDeEspera: 1.5
+  tempoDeEspera: 0.5
 --- !u!1 &374804692
 GameObject:
   m_ObjectHideFlags: 0
