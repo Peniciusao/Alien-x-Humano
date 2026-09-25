@@ -983,10 +983,10 @@ MonoBehaviour:
   - {fileID: 17932926}
   - {fileID: 23571483}
   - {fileID: 392595694}
-  numeroDeWaves: 3
+  numeroDeWaves: 2
   inimigosPorWave: 10
   aumentoPorWave: 2
-  tempoEntreWaves: 5
+  tempoEntreWaves: 3
   intervaloEntreInimigos: 0.3
 --- !u!1 &109020501
 GameObject:
@@ -1284,10 +1284,10 @@ MonoBehaviour:
   - {fileID: 1846946419}
   - {fileID: 1618976268}
   - {fileID: 1182902784}
-  numeroDeWaves: 4
+  numeroDeWaves: 3
   inimigosPorWave: 10
   aumentoPorWave: 2
-  tempoEntreWaves: 5
+  tempoEntreWaves: 3
   intervaloEntreInimigos: 0.3
 --- !u!4 &126371823
 Transform:
@@ -6243,7 +6243,7 @@ Transform:
   m_GameObject: {fileID: 949330445}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.9, y: 0.40000004, z: 0}
+  m_LocalPosition: {x: -218.7816, y: 19.45441, z: 0}
   m_LocalScale: {x: 1.4331, y: 87.671326, z: 1.4331}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6252,7 +6252,7 @@ Transform:
   - {fileID: 1010395113}
   - {fileID: 564739019}
   - {fileID: 2042301899}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1368020548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &979232026
 GameObject:
@@ -7084,7 +7084,7 @@ Transform:
   m_GameObject: {fileID: 1064820787}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 69.4, y: 0.40000004, z: 0}
+  m_LocalPosition: {x: -136.4816, y: 19.45441, z: 0}
   m_LocalScale: {x: 1.4331, y: 87.671326, z: 1.4331}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7094,7 +7094,7 @@ Transform:
   - {fileID: 1214444266}
   - {fileID: 105519824}
   - {fileID: 2044119223}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1368020548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1078271082
 GameObject:
@@ -9520,6 +9520,40 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1368020547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1368020548}
+  m_Layer: 0
+  m_Name: areas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1368020548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368020547}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 205.8816, y: -19.05441, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 949330446}
+  - {fileID: 1064820788}
+  - {fileID: 2061403962}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418564098
 GameObject:
   m_ObjectHideFlags: 0
@@ -13145,10 +13179,10 @@ MonoBehaviour:
   - {fileID: 1017785911}
   - {fileID: 1167426724}
   - {fileID: 792123020}
-  numeroDeWaves: 3
-  inimigosPorWave: 10
+  numeroDeWaves: 2
+  inimigosPorWave: 8
   aumentoPorWave: 2
-  tempoEntreWaves: 5
+  tempoEntreWaves: 3
   intervaloEntreInimigos: 0.3
 --- !u!4 &2042301899
 Transform:
@@ -13376,7 +13410,7 @@ Transform:
   m_GameObject: {fileID: 2061403961}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 164.9, y: 0.40000004, z: 0}
+  m_LocalPosition: {x: -40.981613, y: 19.45441, z: 0}
   m_LocalScale: {x: 1.4331, y: 87.671326, z: 1.4331}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13386,7 +13420,7 @@ Transform:
   - {fileID: 1477617877}
   - {fileID: 126371823}
   - {fileID: 2067309000}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1368020548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2067308999
 GameObject:
@@ -14300,9 +14334,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 619394802}
   - {fileID: 655476196}
-  - {fileID: 949330446}
-  - {fileID: 1064820788}
-  - {fileID: 2061403962}
   - {fileID: 2127616200}
   - {fileID: 526648453}
   - {fileID: 1436908021}
@@ -14312,3 +14343,4 @@ SceneRoots:
   - {fileID: 1252260193}
   - {fileID: 130157500}
   - {fileID: 1078271083}
+  - {fileID: 1368020548}
